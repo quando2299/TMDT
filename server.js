@@ -25,11 +25,11 @@ app.use(
   isProduction ? morgan('combined', { stream: accessLogStream }) : morgan('dev')
 );
 
-app.use(
-  helmet({
-    referrerPolicy: { policy: "no-referrer" },
-  })
-);
+// app.use(
+//   helmet({
+//     referrerPolicy: { policy: "no-referrer" },
+//   })
+// );
 
 // app.use(
 //   //[
