@@ -25,6 +25,12 @@ app.use(
   isProduction ? morgan('combined', { stream: accessLogStream }) : morgan('dev')
 );
 
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
+
 // app.use(
 //   //[
 //   helmet.contentSecurityPolicy({
