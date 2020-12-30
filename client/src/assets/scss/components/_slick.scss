@@ -1,0 +1,17 @@
+.slick-slider {
+  &:focus {
+    outline: none;
+  }
+
+  .slick-slide {
+    & > div {
+      & > div {
+        outline: none;
+      }
+    }
+  }
+}
+
+.product-m .slick-slide > div {
+  margin: 0 10px;
+}

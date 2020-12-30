@@ -1,0 +1,65 @@
+// /* --- Admin components scss --- */
+// @import "../../components/Admin/AdminBreadcrumb/AdminBreadcrumb.scss";
+// @import "../../components/Admin/AdminHeader/AdminHeader.scss";
+// @import "../../components/Admin/AdminSidebar/AdminSidebar.scss";
+// @import "../../components/Admin/AdminTable/AdminTable.scss";
+
+// /* --- Components scss --- */
+// @import "../../components/BackToTop/BackToTop.scss";
+// @import "../../components/Breadcrumb/Breadcrumbs.scss";
+// @import "../../components/CartDropDown/CartDropDown.scss";
+// @import "../../components/CartItem/CartItem.scss";
+// @import "../../components/CartItemDropDown/CartItemDropDown.scss";
+// @import "../../components/CollectionItem/CollectionItem.scss";
+// @import "../../components/CustomButton/CustomButton.scss";
+// @import "../../components/Filter/Filter.scss";
+// @import "../../components/FilterBar/FilterBar.scss";
+// @import "../../components/Footer/Footer.scss";
+// @import "../../components/Header/Header.scss";
+// @import "../../components/Loading/Loading.scss";
+// @import "../../components/OrderItem/OrderItem.scss";
+// @import "../../components/ProductItem/ProductItem.scss";
+// @import "../../components/ProductList/ProductList.scss";
+// @import "../../components/QuantityInput/QuantityInput.scss";
+// @import "../../components/QuickView/QuickView.scss";
+// @import "../../components/SliderBanner/SliderBanner.scss";
+// @import "../../components/WishListItem/WishListItem.scss";
+
+// /* --- Pages scss --- */
+// @import "../../pages/AboutUs/AboutUs.scss";
+// @import "../../pages/Admin/AdminCategory/AdminCategory.scss";
+// @import "../../pages/Authenticate/Signin.scss";
+// @import "../../pages/Checkout/Checkout.scss";
+// @import "../../pages/Collection/Collection.scss";
+// @import "../../pages/Contact/Contact.scss";
+// @import "../../pages/Dashboard/Dashboard.scss";
+// @import "../../pages/HomePage/HomePage.scss";
+// @import "../../pages/Order/Order.scss";
+// @import "../../pages/OrderDetail/OrderDetail.scss";
+// @import "../../pages/OrderSuccess/OrderSuccess.scss";
+// @import "../../pages/ProductDetail/ProductDetail.scss";
+// @import "../../pages/Search/Search.scss";
+// @import "../../pages/Shop/Shop.scss";
+// @import "../../pages/Shoppingcart/Shoppingcart.scss";
+// @import "../../pages/WishList/WishList.scss";
+
+@import "base/animation";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/badge";
+@import "components/button";
+@import "components/card";
+@import "components/modal";
+@import "components/section";
+@import "components/slick";
+
+@import "layout/layout";
+
+$pColor: #e4604a;
+$sColor: #ff4d53;
+$tColor: #3dc8f6;
+$whiteColor: #fff;
+$commonColor1: #5b5b5b;
+$commonColor2: #ebebeb;

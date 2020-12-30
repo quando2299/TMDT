@@ -1,0 +1,71 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: #ffffff;
+  background-clip: border-box;
+  margin-bottom: 30px;
+  border: 0px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
+
+  &-header {
+    background-color: #ffffff;
+    border-bottom: 0;
+    padding: 30px;
+    border-bottom: 1px solid #f8f8f9;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    @media only screen and (max-width: 991px) {
+      padding: 20px;
+    }
+
+    @media only screen and (max-width: 575px) {
+      padding: 15px;
+    }
+
+    &:first-child {
+      border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    }
+
+    h5 {
+      font-size: 18px;
+      color: #222222;
+      margin-bottom: 0;
+      text-transform: capitalize;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &-body {
+    padding: 30px;
+    background-color: transparent;
+    flex: 1 1 auto;
+
+    @media only screen and (max-width: 991px) {
+      padding: 20px !important;
+    }
+
+    @media only screen and (max-width: 575px) {
+      padding: 15px !important;
+    }
+
+    .btn-popup {
+      margin-bottom: 30px;
+    }
+
+    .clearfix {
+      &:after {
+        display: block;
+        clear: both;
+        content: "";
+      }
+    }
+  }
+}

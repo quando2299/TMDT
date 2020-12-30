@@ -1,0 +1,299 @@
+@import "./../../../assets/scss/style.scss";
+
+.page-main-header {
+  font-family: "Work Sans", sans-serif;
+  background-color: $whiteColor;
+  height: 80px;
+  position: fixed;
+  max-width: 100vw;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 0 10px 1px rgba(68, 102, 242, 0.05);
+  width: calc(100% - 255px);
+  display: flex;
+  align-items: center;
+  margin-left: 255px;
+  @include transition(0.3s);
+
+  &.open {
+    margin-left: 0;
+    width: 100%;
+    @include transition(0.3s);
+  }
+
+  svg {
+    color: $pColor;
+  }
+
+  @media only screen and (max-width: 991px) {
+    height: 60px;
+    margin-left: 0;
+    width: 100%;
+    z-index: 11;
+  }
+
+  .main-header-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    margin: 0;
+
+    @media only screen and (max-width: 575px) {
+      padding: 0 15px;
+    }
+
+    .main-header-left {
+      .logo-wrapper {
+        svg {
+          @media only screen and (max-width: 991px) {
+            margin-top: 0;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+    .d-lg-none {
+      @media (min-width: 992px) {
+        display: none !important;
+      }
+    }
+
+    .mobile-sidebar {
+      .switch {
+        width: 25px;
+        height: 16px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        display: inline-block;
+      }
+    }
+
+    .nav-right {
+      text-align: right;
+      padding-left: 0px;
+
+      @media only screen and (max-width: 991px) {
+        position: unset;
+        padding: 0;
+
+        &.open {
+          z-index: 1;
+          opacity: 1;
+          transform: translateY(0px) scaleY(1);
+          visibility: visible;
+        }
+      }
+
+      .mobile-toggle {
+        @media only screen and (max-width: 991px) {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .profile-dropdown {
+        right: -10px;
+        left: inherit;
+        width: 150px;
+        top: 63px;
+        padding: 20px;
+
+        &:before {
+          left: inherit;
+          right: 10px;
+        }
+
+        li {
+          display: block;
+          text-align: left;
+          padding-top: 10px;
+
+          &:hover {
+            a {
+              color: $pColor;
+            }
+          }
+
+          a {
+            color: #313131;
+            @include transition(0.3s);
+            display: flex;
+            align-items: center;
+          }
+
+          &:first-child {
+            padding-top: 0;
+            padding-bottom: 10px;
+          }
+
+          &:nth-child(2) {
+            border-top: 1px solid #eff0f1;
+          }
+        }
+      }
+
+      .onhover-show-div {
+        top: 80px;
+        position: absolute;
+        z-index: 8;
+        background-color: $whiteColor;
+        box-shadow: 0 0 2px 2px #f8f8f9;
+        opacity: 0;
+        visibility: hidden;
+        @include transform(translateY(30px));
+        @include transition(all linear 0.3s);
+
+        &:before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid $whiteColor;
+          top: -7px;
+          position: absolute;
+          z-index: 2;
+        }
+      }
+
+      .dotted-animation {
+        position: relative;
+        right: -3px;
+        top: -7px;
+
+        .animate-circle {
+          position: absolute;
+          top: -20px;
+          right: -4px;
+          height: 25px;
+          width: 25px;
+          z-index: 10;
+          border: 5px solid $pColor;
+          border-radius: 70px;
+          animation: heartbit 1s ease-out;
+          animation-iteration-count: infinite;
+        }
+
+        .main-circle {
+          width: 6px;
+          height: 6px;
+          border-radius: 30px;
+          background-color: $pColor;
+          position: absolute;
+          right: 6px;
+          top: -10px;
+        }
+
+        @keyframes heartbit {
+          0% {
+            transform: scale(0);
+            opacity: 0;
+          }
+          25% {
+            transform: scale(0.1);
+            opacity: 0.1;
+          }
+          50% {
+            transform: scale(0.5);
+            opacity: 0.3;
+          }
+          75% {
+            transform: scale(0.8);
+            opacity: 0.5;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 0;
+          }
+        }
+      }
+
+      & > ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 0;
+
+        @media only screen and (max-width: 991px) {
+          top: 60px;
+          position: absolute;
+          z-index: -1;
+          background-color: $whiteColor;
+          @include transition(all linear 0.3s);
+          box-shadow: 0 2px 2px 2px #efefef;
+          width: 100%;
+          left: 0;
+          transform: translateY(-35px) scaleY(0);
+          opacity: 0;
+          visibility: hidden;
+
+          &.open {
+            z-index: 1;
+            opacity: 1;
+            transform: translateY(0px) scaleY(1);
+            visibility: visible;
+          }
+        }
+
+        @media only screen and (max-width: 575px) {
+          padding: 0 0;
+          justify-content: flex-start;
+        }
+
+        & > li {
+          position: relative;
+          border-left: 1px solid #eff0f1;
+          padding: 0 20px;
+          display: inline-block;
+
+          @media only screen and (max-width: 991px) {
+            margin: 10px 0;
+          }
+
+          &:first-child {
+            @media only screen and (max-width: 575px) {
+              width: auto;
+              margin: 0;
+            }
+          }
+
+          &.onhover-dropdown {
+            cursor: pointer;
+
+            &:hover {
+              .onhover-show-div {
+                opacity: 1;
+                visibility: visible;
+                @include transform(translateY(0px));
+              }
+            }
+          }
+
+          &:last-child {
+            border-left: none;
+            padding-right: 0;
+          }
+
+          svg {
+            margin-top: 10px;
+            width: 18px;
+            height: 18px;
+          }
+
+          h6 {
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            color: $pColor;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}

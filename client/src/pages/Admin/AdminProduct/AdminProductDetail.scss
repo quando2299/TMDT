@@ -1,0 +1,98 @@
+@import "../../../assets/scss/style.scss";
+
+.card {
+  &-body {
+    &.product-page-main {
+      .product-slider {
+        margin-bottom: 20px;
+      }
+
+      .p-Date {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .product-page-details {
+        @media only screen and (max-width: 1199px) {
+          margin-top: 30px;
+        }
+
+        @media only screen and (max-width: 991px) {
+          text-align: left !important;
+        }
+
+        h2 {
+          text-transform: uppercase;
+          margin-bottom: 5px;
+          font-size: 25px;
+          line-height: 1.2em;
+          font-weight: 700;
+          color: #000000;
+          letter-spacing: 0.02em;
+        }
+
+        hr {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          border: 0;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          box-sizing: content-box;
+          height: 0;
+          overflow: visible;
+        }
+
+        h6.product-title {
+          font-size: 14px;
+          color: #222222;
+          text-transform: capitalize;
+          font-weight: 700;
+          margin-bottom: 0;
+          line-height: 24px;
+
+          span {
+            font-size: 24px;
+            font-weight: 400;
+            color: #aaaaaa;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+          }
+        }
+
+        p {
+          color: #777777;
+          font-size: 13px;
+          line-height: 1.7;
+          letter-spacing: 0.7px;
+          margin-top: 0;
+          margin-bottom: 1rem;
+        }
+
+        h3 {
+          font-size: 24px;
+          font-weight: 400;
+          color: #222222;
+          letter-spacing: 0.03em;
+          margin-bottom: 0.5rem;
+          line-height: 1.2;
+
+          del {
+            font-size: 14px;
+            color: #aaaaaa;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .small-slick {
+        .slick-slide {
+          &.slick-current {
+            .item {
+              border: 1px solid #ff8084;
+            }
+          }
+        }
+      }
+    }
+  }
+}

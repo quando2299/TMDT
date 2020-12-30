@@ -1,0 +1,127 @@
+@import "./../../assets/scss/style.scss";
+
+.about-page {
+  .banner-section {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-transform: capitalize;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+
+    @media (min-width: 991px) {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    color: #777777;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    margin-top: 0;
+    margin-bottom: -7px;
+  }
+}
+
+.border-section {
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+
+  @media (max-width: 767px) {
+    border-bottom: none;
+    padding-bottom: 0 !important;
+  }
+
+  .service-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      svg {
+        @include animation(pulse 1000ms ease-in-out);
+        @include transition(all 0.3s ease);
+      }
+
+      h4 {
+        color: $pColor;
+        @include transition(all 0.3s ease);
+      }
+    }
+
+    & + .service-block {
+      border-left: 1px solid #dddddd;
+
+      @media (max-width: 767px) {
+        border-left: 0;
+        margin-top: 20px;
+      }
+    }
+
+    .media {
+      padding-top: 23px;
+      padding-bottom: 23px;
+      align-items: center;
+
+      @media (max-width: 767px) {
+        display: block;
+        text-align: center;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      svg {
+        margin-right: 12px;
+        width: 60px;
+        height: 60px;
+
+        @media (max-width: 1199px) {
+          width: 50px;
+          height: 50px;
+        }
+
+        @media (max-width: 991px) {
+          margin-bottom: 20px;
+          height: auto;
+          width: 46px;
+        }
+      }
+    }
+
+    .media-body {
+      h4 {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+
+        @media (max-width: 1367px) {
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        color: #777777;
+        line-height: 1;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-transform: capitalize;
+
+        @media (max-width: 991px) {
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}

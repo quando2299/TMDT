@@ -1,0 +1,229 @@
+@import "./../../assets/scss/style.scss";
+
+.section-dashboard {
+  .account-sidebar {
+    display: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    @media (max-width: 991px) {
+      display: block;
+    }
+
+    .btn-account {
+      display: inline-block;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: 12px 18px;
+      font-size: 16px;
+      line-height: 16px;
+      width: 40%;
+      background-color: $pColor;
+      color: $whiteColor;
+      transition: ease-in-out 0.3s;
+
+      @media (max-width: 991px) {
+        width: auto;
+      }
+    }
+  }
+
+  .dashboard-left {
+    @media (max-width: 991px) {
+      position: fixed;
+      height: 100vh;
+      top: 0;
+      left: -350px;
+      background-color: $whiteColor;
+      z-index: 99;
+      padding: 0 35px 35px;
+      max-width: 350px;
+      @include transition(all ease 0.5s);
+      box-shadow: 0 0 8px 0 #dddddd;
+    }
+
+    .collection-mobile-back {
+      padding: 15px 0;
+      border-bottom: 1px solid #dddddd;
+      display: none;
+
+      @media (max-width: 991px) {
+        display: block;
+      }
+
+      .filter-back {
+        text-transform: uppercase;
+        font-size: 14px;
+        color: #000;
+        cursor: pointer;
+
+        i {
+          position: relative;
+          font-size: 20px;
+          font-weight: 700;
+          margin-right: 10px;
+          top: 3px;
+        }
+      }
+    }
+
+    .block-content {
+      border: 1px solid #ddd;
+      padding: 15px;
+
+      @media (max-width: 991px) {
+        border: none;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+      ul {
+        li {
+          display: flex;
+          @include transition(all ease 0.5s);
+
+          &:hover {
+            padding-left: 10px;
+            color: $pColor;
+
+            a {
+              color: $pColor;
+            }
+          }
+
+          &:before {
+            content: "\F105";
+            display: inline-block;
+            font-family: "Font Awesome 5 Free";
+            font-style: normal;
+            line-height: 0.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 3px;
+          }
+
+          &.active {
+            color: $pColor;
+
+            a {
+              color: $pColor;
+            }
+          }
+
+          a {
+            color: #007bff;
+            text-decoration: none;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .dashboard-right {
+    .dashboard {
+      border: 1px solid #ddd;
+      padding: 30px;
+
+      @media (max-width: 577px) {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #222222;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.02em;
+
+        @media (max-width: 577px) {
+          font-size: 18px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        color: #5f5f5f;
+        line-height: 20px;
+        margin-bottom: 0;
+      }
+
+      .box-head {
+        h2 {
+          font-size: 22px;
+          margin: 20px 0 0;
+          text-transform: capitalize;
+          color: #333;
+          line-height: 1;
+          letter-spacing: 0.02em;
+
+          @media (max-width: 577px) {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .box {
+        .box-title {
+          border-bottom: 1px solid #ddd;
+          display: inline-block;
+          margin-bottom: 5px;
+          padding: 12px 0;
+          position: relative;
+          width: 100%;
+
+          h3 {
+            font-size: 16px;
+            margin: 0;
+            text-transform: capitalize;
+            color: #333;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+          }
+
+          a {
+            position: absolute;
+            right: 0;
+            top: 12px;
+            color: $pColor;
+            @include transition(all ease 0.5s);
+          }
+        }
+
+        h6 {
+          font-size: 14px;
+          line-height: 25px !important;
+          margin-bottom: 0;
+          font-weight: 400;
+          color: #777777;
+
+          a {
+            color: $pColor;
+          }
+        }
+
+        address {
+          font-style: normal;
+          line-height: 25px;
+
+          a {
+            color: $pColor;
+          }
+        }
+      }
+    }
+  }
+}

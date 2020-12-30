@@ -1,0 +1,99 @@
+@import "./../../assets/scss/style.scss";
+
+.section-login-page {
+  h3 {
+    font-size: 24px;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #222222;
+    font-weight: 700;
+    margin-top: -5px;
+  }
+
+  .theme-card {
+    padding: 30px;
+    border: 1px solid #dddddd;
+    line-height: 1;
+    position: relative;
+
+    @media (max-width: 767px) {
+      padding: 25px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 18px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -5px;
+      margin-left: -5px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      text-transform: capitalize;
+      color: #333333;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      display: block;
+      width: 100%;
+      padding: 17px 25px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #495057;
+      margin-bottom: 30px;
+      border-color: #dddddd;
+      border-radius: 0;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      -webkit-transition: border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .right-login {
+    @media (max-width: 991px) {
+      margin-top: 30px;
+    }
+
+    .authentication-right {
+      height: calc(100% - 48px);
+
+      h6 {
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #333333;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        @media (max-width: 480px) {
+          margin-bottom: 10px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        color: #555555;
+        line-height: 2;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

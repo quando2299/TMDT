@@ -1,0 +1,50 @@
+@import "./../../../assets/scss/style.scss";
+
+.dropzone {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 50px;
+  border: 2px dashed #ff8084;
+  border-radius: 15px;
+  border-image: none;
+  background: transparent;
+  box-sizing: border-box;
+  min-height: 150px;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.thumbs-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 16px;
+
+  .thumb-item {
+    display: inline-flex;
+    border-radius: 2px;
+    border: 1px solid #eaeaea;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    width: 100px;
+    height: 100px;
+    padding: 4px;
+    box-sizing: border-box;
+
+    .thumb-inner {
+      display: flex;
+      min-width: 0;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+}

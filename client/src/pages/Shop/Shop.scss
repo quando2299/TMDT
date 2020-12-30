@@ -1,0 +1,103 @@
+@import "./../../assets/scss/style.scss";
+
+.collection-wrapper {
+  .top-banner-wrapper {
+    .top-banner-content {
+      h4 {
+        font-size: 18px;
+        text-transform: capitalize;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        margin-bottom: 15px;
+
+        @media (max-width: 991px) {
+          font-size: 20px;
+        }
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #444444;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #777777;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .collection-product-wrapper {
+    .product-top-filter {
+      border-bottom: 1px solid #dddddd;
+      border-top: 1px solid #dddddd;
+
+      @media (max-width: 991px) {
+        border-top: none;
+      }
+
+      .filter-main-btn {
+        display: none;
+        margin-bottom: 20px;
+        cursor: pointer;
+
+        @media (max-width: 991px) {
+          display: block;
+        }
+
+        .btn-filter {
+          display: inline-block;
+          text-transform: uppercase;
+          font-weight: 700;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          border: 1px solid transparent;
+          padding: 12px 18px;
+          font-size: 16px;
+          line-height: 16px;
+          width: 40%;
+          background-color: $pColor;
+          color: $whiteColor;
+          @include transition(ease-in-out 0.3s);
+
+          &:not(:disabled) {
+            cursor: pointer;
+          }
+
+          i {
+            font-size: 16px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .collection-filter {
+    @media (max-width: 991px) {
+      position: fixed;
+      height: 100vh;
+      top: 0;
+      left: -370px;
+      background-color: white;
+      z-index: 99;
+      overflow-y: scroll;
+      padding: 15px 0 15px 15px;
+      max-width: 350px;
+      @include transition(all ease 0.5s);
+      box-shadow: 1px 0 5px #ddd;
+    }
+  }
+}

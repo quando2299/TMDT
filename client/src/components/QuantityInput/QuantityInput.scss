@@ -1,0 +1,82 @@
+@import "./../../assets/scss/style.scss";
+
+.input-qty {
+  position: relative;
+  flex-wrap: wrap;
+  align-items: stretch;
+  -webkit-box-pack: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+  width: unset;
+
+  .input-group-prepend {
+    margin-right: -1px;
+
+    .btn {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      background: $whiteColor !important;
+      border: 1px solid #ced4da;
+      color: #777777;
+      padding-left: 12px;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      border-radius: 0;
+      transition: 0.3s ease-in-out;
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      user-select: none;
+      padding: 0.75rem;
+
+      &:not(:disabled) {
+        cursor: pointer;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .form-control[type="number"] {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: $whiteColor;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -moz-appearance: textfield;
+    -webkit-transition: border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-right: none;
+    text-align: center;
+    width: 80px;
+    -webkit-box-flex: unset;
+    -ms-flex: unset;
+    flex: unset;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+export const FilterActionTypes = {
+  FILTER_CATEGORY: "FILTER_CATEGORY",
+  FILTER_PRICE: "FILTER_PRICE",
+  FILTER_ORDER: "FILTER_ORDER",
+  SET_SKIP: "SET_SKIP",
+};

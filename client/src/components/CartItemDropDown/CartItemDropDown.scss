@@ -1,0 +1,62 @@
+@import "./../../assets/scss/style.scss";
+
+.dropdown-item-wrapper {
+  position: relative;
+  padding-left: 0 !important;
+  padding-bottom: 10px;
+  width: 100%;
+  display: inline-block;
+
+  .media {
+    display: flex;
+    align-items: flex-start;
+
+    img {
+      height: 90px;
+      cursor: pointer;
+      margin-right: 1rem !important;
+    }
+
+    .media-body {
+      align-self: center;
+
+      h4 {
+        font-size: 18px;
+        color: #333333;
+        text-transform: capitalize;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+
+        @media (max-width: 991px) {
+          font-size: 16px;
+        }
+
+        span {
+          color: #777777;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .close-circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    i {
+      @media (max-width: 577px) {
+        font-size: 14px !important;
+      }
+
+      cursor: pointer;
+      color: #a1a1a1;
+      @include transition(all ease 0.3s);
+
+      @media (min-width: 578px) {
+        display: block;
+      }
+    }
+  }
+}

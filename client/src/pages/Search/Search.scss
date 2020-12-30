@@ -1,0 +1,27 @@
+@import "./../../assets/scss/style.scss";
+
+.section-product-search {
+  .search-header {
+    justify-content: space-between;
+
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+
+    .search-result {
+      h4 {
+        font-size: 18px;
+        text-transform: capitalize;
+        font-weight: 600;
+        color: #444444;
+        letter-spacing: 0.03em;
+        line-height: 1;
+
+        @media (max-width: 767px) {
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

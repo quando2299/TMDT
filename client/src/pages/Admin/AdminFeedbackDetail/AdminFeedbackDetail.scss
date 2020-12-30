@@ -1,0 +1,33 @@
+@import "../../../assets/scss/style.scss";
+
+.admin-detail {
+  .card {
+    &-body {
+      h4 {
+        font-size: 18px;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-bottom: 1rem;
+        color: #222222;
+      }
+
+      ul.feedback-detail {
+        li {
+          display: flex;
+          text-transform: capitalize;
+          line-height: 24px;
+          font-size: 16px;
+          color: #212529;
+        }
+      }
+
+      p {
+        line-height: 24px;
+        font-size: 18px;
+        color: #777777;
+      }
+    }
+  }
+}
