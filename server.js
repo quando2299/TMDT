@@ -30,11 +30,11 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      connectSrc: [
-        "'self'",
-        'https://api.cloudinary.com',
-        'https://www.sandbox.paypal.com',
-      ],
+      // connectSrc: [
+      //   "'self'",
+      //   'https://api.cloudinary.com',
+      //   'https://www.sandbox.paypal.com',
+      // ],
       frameSrc: [
         "'self'",
         'https://www.google.com',
