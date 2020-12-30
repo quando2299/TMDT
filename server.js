@@ -25,47 +25,44 @@ app.use(
   isProduction ? morgan('combined', { stream: accessLogStream }) : morgan('dev')
 );
 
-app.use(
-  //[
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      // connectSrc: [
-      //   "'self'",
-      //   'https://api.cloudinary.com',
-      //   'https://www.sandbox.paypal.com',
-      // ],
-      frameSrc: [
-        "'self'",
-        'https://www.google.com',
-        'https://www.sandbox.paypal.com',
-      ],
-      childSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", 'https://www.paypal.com'],
-      styleSrc: [
-        "'self'",
-        "'unsafe-inline'",
-        'https://fonts.googleapis.com',
-        'https://cdnjs.cloudflare.com',
-      ],
-      fontSrc: [
-        "'self'",
-        'https://fonts.gstatic.com',
-        'https://cdnjs.cloudflare.com',
-      ],
-      imgSrc: [
-        "'self' blob: data:",
-        'https://res.cloudinary.com',
-        'https://www.paypalobjects.com',
-      ],
-      baseUri: ["'self'"],
-    },
-  })
-  //]
-);
-
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+// app.use(
+//   //[
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       // connectSrc: [
+//       //   "'self'",
+//       //   'https://api.cloudinary.com',
+//       //   'https://www.sandbox.paypal.com',
+//       // ],
+//       frameSrc: [
+//         "'self'",
+//         'https://www.google.com',
+//         'https://www.sandbox.paypal.com',
+//       ],
+//       childSrc: ["'self'"],
+//       scriptSrc: ["'self'", "'unsafe-inline'", 'https://www.paypal.com'],
+//       styleSrc: [
+//         "'self'",
+//         "'unsafe-inline'",
+//         'https://fonts.googleapis.com',
+//         'https://cdnjs.cloudflare.com',
+//       ],
+//       fontSrc: [
+//         "'self'",
+//         'https://fonts.gstatic.com',
+//         'https://cdnjs.cloudflare.com',
+//       ],
+//       imgSrc: [
+//         "'self' blob: data:",
+//         'https://res.cloudinary.com',
+//         'https://www.paypalobjects.com',
+//       ],
+//       baseUri: ["'self'"],
+//     },
+//   })
+//   //]
+// );
 
 // Routes
 app.use('/api', require('./routes/authRouter'));
