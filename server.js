@@ -31,44 +31,68 @@ app.use(
 //   })
 // );
 
+// app.use(
+//   //[
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       connectSrc: [
+//         "'self'",
+//         'https://api.cloudinary.com',
+//         'https://www.sandbox.paypal.com',
+//       ],
+//       frameSrc: [
+//         "'self'",
+//         'https://www.google.com',
+//         'https://www.sandbox.paypal.com',
+//       ],
+//       childSrc: ["'self'"],
+//       scriptSrc: ["'self'", "'unsafe-inline'", 'https://www.paypal.com'],
+//       styleSrc: [
+//         "'self'",
+//         "'unsafe-inline'",
+//         'https://fonts.googleapis.com',
+//         'https://cdnjs.cloudflare.com',
+//       ],
+//       fontSrc: [
+//         "'self'",
+//         'https://fonts.gstatic.com',
+//         'https://cdnjs.cloudflare.com',
+//       ],
+//       imgSrc: [
+//         "'self' blob: data:",
+//         'https://res.cloudinary.com',
+//         'https://www.paypalobjects.com',
+//       ],
+//       baseUri: ["'self'"],
+//     },
+//   })
+//   //]
+// );
+
+// ----------------- test
 app.use(
-  //[
+  // [
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      connectSrc: [
-        "'self'",
-        'https://api.cloudinary.com',
-        'https://www.sandbox.paypal.com',
-      ],
-      frameSrc: [
-        "'self'",
-        'https://www.google.com',
-        'https://www.sandbox.paypal.com',
-      ],
-      childSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", 'https://www.paypal.com'],
+      connectSrc: ["'self'", 'https://checkout.stripe.com'],
+      frameSrc: ["'self'", 'https://checkout.stripe.com'],
+      childSrc: ["'self'", 'https://checkout.stripe.com'],
+      scriptSrc: ["'self'", 'https://checkout.stripe.com'],
       styleSrc: [
         "'self'",
-        "'unsafe-inline'",
         'https://fonts.googleapis.com',
-        'https://cdnjs.cloudflare.com',
+        'https://checkout.stripe.com',
       ],
-      fontSrc: [
-        "'self'",
-        'https://fonts.gstatic.com',
-        'https://cdnjs.cloudflare.com',
-      ],
-      imgSrc: [
-        "'self' blob: data:",
-        'https://res.cloudinary.com',
-        'https://www.paypalobjects.com',
-      ],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+      imgSrc: ["'self'", 'https://*.stripe.com', 'https://res.cloudinary.com'],
       baseUri: ["'self'"],
     },
   })
-  //]
-);
+  // ]
+)
+
 
 // Routes
 app.use('/api', require('./routes/authRouter'));
@@ -110,4 +134,5 @@ if (isProduction) {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log('Server is running on port', PORT);
+  console.log(__dirname);
 });
