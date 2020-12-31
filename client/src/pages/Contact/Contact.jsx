@@ -173,7 +173,7 @@ const Contact = ({ history }) => {
                           <h6>Address</h6>
                         </div>
                         <div className="media-body">
-                          <p>vuledev2905@gmail.com</p>
+                          <p>quando.2299@gmail.com</p>
                           <p>info@shopnike.com</p>
                         </div>
                       </li>
@@ -183,7 +183,7 @@ const Contact = ({ history }) => {
                           <h6>Fax</h6>
                         </div>
                         <div className="media-body">
-                          <p>vuledev2905@gmail.com</p>
+                          <p>quando.2299@gmail.com</p>
                           <p>info@shopnike.com</p>
                         </div>
                       </li>
