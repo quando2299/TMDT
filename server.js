@@ -25,73 +25,67 @@ app.use(
   isProduction ? morgan('combined', { stream: accessLogStream }) : morgan('dev')
 );
 
-// app.use(
-//   helmet({
-//     referrerPolicy: { policy: "no-referrer" },
-//   })
-// );
-
-// app.use(
-//   //[
-//   helmet.contentSecurityPolicy({
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       connectSrc: [
-//         "'self'",
-//         'https://api.cloudinary.com',
-//         'https://www.sandbox.paypal.com',
-//       ],
-//       frameSrc: [
-//         "'self'",
-//         'https://www.google.com',
-//         'https://www.sandbox.paypal.com',
-//       ],
-//       childSrc: ["'self'"],
-//       scriptSrc: ["'self'", "'unsafe-inline'", 'https://www.paypal.com'],
-//       styleSrc: [
-//         "'self'",
-//         "'unsafe-inline'",
-//         'https://fonts.googleapis.com',
-//         'https://cdnjs.cloudflare.com',
-//       ],
-//       fontSrc: [
-//         "'self'",
-//         'https://fonts.gstatic.com',
-//         'https://cdnjs.cloudflare.com',
-//       ],
-//       imgSrc: [
-//         "'self' blob: data:",
-//         'https://res.cloudinary.com',
-//         'https://www.paypalobjects.com',
-//       ],
-//       baseUri: ["'self'"],
-//     },
-//   })
-//   //]
-// );
-
-// ----------------- test
 app.use(
-  // [
+  //[
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      connectSrc: ["'self'", 'https://checkout.stripe.com'],
-      frameSrc: ["'self'", 'https://checkout.stripe.com'],
-      childSrc: ["'self'", 'https://checkout.stripe.com'],
-      scriptSrc: ["'self'", 'https://checkout.stripe.com'],
+      connectSrc: [
+        "'self'",
+        'https://api.cloudinary.com',
+        'https://www.sandbox.paypal.com',
+      ],
+      frameSrc: [
+        "'self'",
+        'https://www.google.com',
+        'https://www.sandbox.paypal.com',
+      ],
+      childSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", 'https://www.paypal.com'],
       styleSrc: [
         "'self'",
+        "'unsafe-inline'",
         'https://fonts.googleapis.com',
-        'https://checkout.stripe.com',
+        'https://cdnjs.cloudflare.com',
       ],
-      fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-      imgSrc: ["'self'", 'https://*.stripe.com', 'https://res.cloudinary.com'],
+      fontSrc: [
+        "'self'",
+        'https://fonts.gstatic.com',
+        'https://cdnjs.cloudflare.com',
+      ],
+      imgSrc: [
+        "'self' blob: data:",
+        'https://res.cloudinary.com',
+        'https://www.paypalobjects.com',
+      ],
       baseUri: ["'self'"],
     },
   })
-  // ]
-)
+  //]
+);
+
+// // ----------------- test
+// app.use(
+//   // [
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       connectSrc: ["'self'", 'https://checkout.stripe.com'],
+//       frameSrc: ["'self'", 'https://checkout.stripe.com'],
+//       childSrc: ["'self'", 'https://checkout.stripe.com'],
+//       scriptSrc: ["'self'", 'https://checkout.stripe.com'],
+//       styleSrc: [
+//         "'self'",
+//         'https://fonts.googleapis.com',
+//         'https://checkout.stripe.com',
+//       ],
+//       fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+//       imgSrc: ["'self'", 'https://*.stripe.com', 'https://res.cloudinary.com'],
+//       baseUri: ["'self'"],
+//     },
+//   })
+//   // ]
+// )
 
 
 // Routes
