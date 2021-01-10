@@ -24,6 +24,7 @@ const AdminProductUpdate = (props) => {
     main_img: "",
     images: "",
     sale: 0,
+    amount: 0
   });
   const [validation, setValidation] = useState({
     name: "",
@@ -33,9 +34,10 @@ const AdminProductUpdate = (props) => {
     main_img: "",
     images: "",
     sale: 0,
+    amount: 0
   });
 
-  const { name, description, price, category, sale, images, main_img } = data;
+  const { name, description, price, category, sale, images, main_img, amount } = data;
 
   const handleChangeProduct = (e) => {
     const name = e.target.name;
@@ -63,6 +65,9 @@ const AdminProductUpdate = (props) => {
       case "description":
         validation.description =
           value.length === 0 ? "Description is required!" : "";
+        break;
+      case "amount":
+        validation.amount = value.length === 0 ? "Amount is not valid" : "";
         break;
       default:
         break;
@@ -119,6 +124,7 @@ const AdminProductUpdate = (props) => {
           price: product.price,
           sale: product.sale,
           category: product.category._id,
+          amount: product.amount
         });
       } else {
         setError("This product is not exists!");
@@ -147,7 +153,7 @@ const AdminProductUpdate = (props) => {
     if (validateForm(validation)) {
       setLoading(true);
       e.preventDefault();
-      let pData = { name, description, price, category, sale };
+      let pData = { name, description, price, category, sale, amount };
 
       if (open) {
         pData.images = [];
@@ -239,6 +245,23 @@ const AdminProductUpdate = (props) => {
                             />
                             {validation.name.length > 0 && (
                               <div className="error">{validation.name}</div>
+                            )}
+                          </div>
+                          <div className="form-group">
+                            <label className="col-form-label" htmlFor="amount">
+                              <span>*</span> Price
+                            </label>
+                            <input
+                              className="form-control"
+                              id="amount"
+                              type="number"
+                              required=""
+                              value={amount}
+                              name="amount"
+                              onChange={handleChangeProduct}
+                            />
+                            {validation.price.length > 0 && (
+                              <div className="error">{validation.amount}</div>
                             )}
                           </div>
                           <div className="form-group">

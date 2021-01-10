@@ -72,6 +72,9 @@ const AdminTable = ({
     if (key === "role") {
       editable = null;
     }
+    if (key === "checked"){
+      editable = null;
+    }
     if (key !== "__v") {
       columns.push({
         Header: <b>{Capitalize(key.toString())}</b>,

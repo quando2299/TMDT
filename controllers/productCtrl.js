@@ -10,6 +10,7 @@ const productCtrl = {
 
       const products = await Product.find()
         .populate('category')
+        .find({checked: true})
         .sort([[sortBy, order]])
         .limit(limit)
         .exec();
@@ -66,13 +67,16 @@ const productCtrl = {
               $gte: req.body.filters[key][0],
               $lte: req.body.filters[key][1],
             };
-          } else {
+          }
+          else {
             findArgs[key] = req.body.filters[key];
           }
+          findArgs["checked"] = true
         }
       }
 
-      const products = await Product.find(findArgs)
+      const products = await Product
+        .find(findArgs)
         .populate('category')
         .sort([[sortBy, order]])
         .skip(skip)
@@ -129,7 +133,7 @@ const productCtrl = {
   },
   createProduct: async (req, res) => {
     try {
-      const { name, price, description, images, category, sale } = req.body;
+      const { name, price, description, images, category, sale, amount } = req.body;
       if (!images) return res.status(400).json({ message: 'No image upload!' });
 
       const product = await Product.findOne({ name });
@@ -147,6 +151,8 @@ const productCtrl = {
         images,
         category,
         sale,
+        checked,
+        amount
       });
 
       await newProduct.save();
@@ -169,7 +175,7 @@ const productCtrl = {
   },
   updateProduct: async (req, res) => {
     try {
-      const { name, price, description, images, category, sale } = req.body;
+      const { name, price, description, images, category, sale, checked, amount } = req.body;
 
       let obj = {
         name,
@@ -179,6 +185,8 @@ const productCtrl = {
         description,
         category,
         sale,
+        checked,
+        amount
       };
 
       if (images) {

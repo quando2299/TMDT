@@ -67,7 +67,7 @@ export const MENUITEMS = [
 ];
 
 export const ORDER_COLUMNS =  ["_id", "paymentResult", "status", "totalPrice", "createdAt", "updatedAt"];
-export const PRODUCT_COLUMNS =  ["_id", "images", "name", "category", "discount_price", "createdAt", "updatedAt"];
+export const PRODUCT_COLUMNS =  ["_id", "images", "name", "category", "checked", "discount_price", "createdAt", "updatedAt"];
 export const USER_COLUMNS =  ["_id", "name", "email", "role", "createdAt", "updatedAt"];
 
 export const ORDER_STATUSES = {

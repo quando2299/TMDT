@@ -19,6 +19,7 @@ const AdminProductCreate = () => {
     main_img: "",
     images: "",
     sale: 0,
+    amount: 0,
   });
   const [loading, setLoading] = useState(false);
 
@@ -30,9 +31,10 @@ const AdminProductCreate = () => {
     main_img: "",
     images: "",
     sale: 0,
+    amount: 0
   });
 
-  const { name, description, price, category, sale, images, main_img } = data;
+  const { name, description, price, category, sale, images, main_img, amount } = data;
 
   const handleChangeProduct = (e) => {
     const name = e.target.name;
@@ -227,6 +229,25 @@ const AdminProductCreate = () => {
                     />
                     {validation.sale.length > 0 && (
                       <div className="error">{validation.sale}</div>
+                    )}
+                  </div>
+                  <div className="form-group">
+                    <label className="col-form-label" htmlFor="amount">
+                      <span>*</span> Amount
+                    </label>
+                    <input
+                      className="form-control"
+                      id="amount"
+                      type="number"
+                      required=""
+                      value={amount}
+                      name="amount"
+                      min="0"
+                      max="1000"
+                      onChange={handleChangeProduct}
+                    />
+                    {validation.sale.length > 0 && (
+                      <div className="error">{validation.amount}</div>
                     )}
                   </div>
                   <div className="form-group">

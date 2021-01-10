@@ -5,7 +5,8 @@ import { USER_COLUMNS } from "../../../common/constant";
 import AdminBreadcrumb from "../../../components/Admin/AdminBreadcrumb/AdminBreadcrumb";
 import AdminTable from "../../../components/Admin/AdminTable/AdminTable";
 import {
-  deleteUserRequest, getAllUserRequest,
+  deleteUserRequest,
+  getAllUserRequest,
   UpdateUserRoleRequest
 } from "../../../redux/user/user.actions";
 import "./AdminUser.scss";

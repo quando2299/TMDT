@@ -45,7 +45,11 @@ const productSchema = new mongoose.Schema(
     },
     checked: {
       type: Boolean,
-      default: false,
+      default: true,
+    },
+    amount: {
+      type: Number,
+      default: 0,
     },
     sold: {
       type: Number,

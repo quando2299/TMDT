@@ -7,6 +7,7 @@ import AdminTable from "../../../components/Admin/AdminTable/AdminTable";
 import {
   allProductSearchRequest,
   deleteProductRequest,
+  updateProductRequest
 } from "../../../redux/product/product.actions";
 
 const AdminProduct = ({ history }) => {
@@ -16,6 +17,7 @@ const AdminProduct = ({ history }) => {
 
   const [editValue, setEditValue] = useState({});
   const [action, setAction] = useState(null);
+
 
   const getProducts = useCallback(() => {
     dispatch(allProductSearchRequest(""));
@@ -45,7 +47,21 @@ const AdminProduct = ({ history }) => {
           obj["price"] = item[p];
         } else if (p === "category") {
           obj[p] = item[p].name;
-        } else {
+        } else if (p === "checked") {
+          obj["checked"] = (
+            <input
+              id="isImage"
+              type="checkbox"
+              className="custom-control-input"
+              checked={item["checked"]}
+              onChange={() => {
+                item["checked"] = !item["checked"]
+                dispatch(updateProductRequest(item, item["_id"]))
+              }}
+            />
+          );
+        }
+        else {
           obj[p] = item[p];
         }
       });
